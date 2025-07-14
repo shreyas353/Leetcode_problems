@@ -1,30 +1,30 @@
-class Solution 
-{
-    public int romanToInt(String s) 
-    {
-        Map<Character, Integer> map = new HashMap<>();
-        map.put('I', 1);
-        map.put('V', 5);
-        map.put('X', 10);
-        map.put('L', 50);
-        map.put('C', 100);
-        map.put('D', 500);
-        map.put('M', 1000);
-        char chars[]=s.toCharArray();
-        int result=0;
-        int i,j;
-        for(i=0, j=1; j<chars.length; i++, j++)
-        {
-            if(map.get(chars[i])>=map.get(chars[j]))
-            {
-                result=result+map.get(chars[i]);
-            }
-            else
-            {
-                result=result-map.get(chars[i]);
+class Solution {
+    public int romanToInt(String s) {
+        char[] chars = s.toCharArray();
+        int result = 0;
+        int i, j;
+
+        for (i = 0, j = 1; j < chars.length; i++, j++) {
+            if (valueOf(chars[i]) >= valueOf(chars[j])) {
+                result += valueOf(chars[i]);
+            } else {
+                result -= valueOf(chars[i]);
             }
         }
-        result=result+map.get(chars[i]);
+
+        result += valueOf(chars[i]);  // Add the last character value
         return result;
+    }
+
+    // Custom method to get value of Roman characters
+    private int valueOf(char ch) {
+        if (ch == 'I') return 1;
+        else if (ch == 'V') return 5;
+        else if (ch == 'X') return 10;
+        else if (ch == 'L') return 50;
+        else if (ch == 'C') return 100;
+        else if (ch == 'D') return 500;
+        else if (ch == 'M') return 1000;
+        else return 0; // default case
     }
 }
