@@ -1,30 +1,26 @@
-class Solution 
-{
-    public boolean isValid(String s) 
-    {
-        Stack<Character> stack = new Stack<>();
+class Solution {
+    public boolean isValid(String s) {
+        // Use a character array to simulate stack
+        char[] stack = new char[s.length()];
+        int top = -1;
+
         for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) == '(' || s.charAt(i) == '[' || s.charAt(i) == '{') 
-            {
-                stack.push(s.charAt(i));
-            }
-            else if (!stack.isEmpty() && s.charAt(i) == ')' && stack.peek() == '(') 
-            {
-                stack.pop();
-            }
-            else if (!stack.isEmpty() && s.charAt(i) == ']' && stack.peek() == '[') 
-            {
-                stack.pop();
-            }
-            else if (!stack.isEmpty() && s.charAt(i) == '}' && stack.peek() == '{') 
-            {
-                stack.pop();
-            }
-            else 
-            {
-                return false;
+            char ch = s.charAt(i);
+
+            if (ch == '(' || ch == '[' || ch == '{') {
+                stack[++top] = ch; // Push to "stack"
+            } else {
+                if (top == -1) return false; // Stack is empty
+
+                char topChar = stack[top--]; // Pop from "stack"
+
+                if ((ch == ')' && topChar != '(') ||
+                    (ch == ']' && topChar != '[') ||
+                    (ch == '}' && topChar != '{')) {
+                    return false;
+                }
             }
         }
-        return stack.isEmpty();
+        return top == -1; // If stack is empty, it's valid
     }
 }
