@@ -17,21 +17,19 @@ class Solution
     }
     public boolean isPalindrome(String s) 
     {
-        StringBuilder sb=new StringBuilder();
-        for(int i=0;i<s.length();i++)
+        String cleaned = "";
+        for (int i = 0; i < s.length(); i++)
         {
-            char ch=s.charAt(i);
-            if(Character.isLetter(ch) || Character.isDigit(ch))
+            char ch = s.charAt(i);
+            if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') || (ch >= '0' && ch <= '9'))
             {
-                sb.append(ch);
+                if (ch >= 'A' && ch <= 'Z')
+                {
+                    ch = (char)(ch + 32);
+                }
+                cleaned = cleaned + ch;
             }
-        }   
-        String result=sb.toString();
-        result=result.toLowerCase();
-        if(checkPalindrome(result))
-        {
-            return true;
         }
-        return false;
+        return checkPalindrome(cleaned);
     }
 }
