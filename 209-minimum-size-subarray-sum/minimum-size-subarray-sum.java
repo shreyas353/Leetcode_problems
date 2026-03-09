@@ -5,7 +5,7 @@ class Solution {
         int high=0;
         int sum=0;
         int res=Integer.MAX_VALUE;
-        while(high<nums.length){
+        for(high=0;high<nums.length;high++){
             sum=sum+nums[high];
             while(sum>=target){
                 int len=high-low+1;
@@ -13,7 +13,6 @@ class Solution {
                 sum=sum-nums[low];
                 low++;
             }
-            high++;
         }
         if(res==Integer.MAX_VALUE){
             return 0;
