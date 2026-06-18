@@ -1,7 +1,8 @@
 import java.util.*;
 class Solution {
     public boolean isThree(int n) {
-        if((int)Math.sqrt(n)*(int)Math.sqrt(n)==n && prime((int)Math.sqrt(n))){
+        int root=(int)Math.sqrt(n);
+        if(Math.pow(root,2)==n&&prime(root)){
             return true;
         }
         return false;
