@@ -1,7 +1,6 @@
 class Solution {
     public int differenceOfSum(int[] nums) {
-        int diff=ElementSum(nums)-DigitSum(nums);
-        return diff;
+        return Math.abs(ElementSum(nums)-DigitSum(nums));
     }
     public static int ElementSum(int[] nums){
         int sum=0;
