@@ -3,14 +3,8 @@ class Solution {
         int count=0;
         for(int i=0;i<nums.length;i++){
             int rem=nums[i]%3;
-            if(rem==0){
-                count=count+0;
-            }
-            else if(rem==1){
-                count++;
-            }
-            else{
-                count++;
+            if(rem!=0){
+                count=count+1;
             }
         }
         return count;
