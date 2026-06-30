@@ -2,7 +2,9 @@ class Solution {
     public int sumOfPrimesInRange(int n) {
         int r=Reverse(n);
         int sum=0;
-        for(int i=Math.min(n,r);i<=Math.max(n, r);i++){
+        int start=Math.min(n,r);
+        int end=Math.max(n,r);
+        for(int i=start;i<=end;i++){
             if(isPrime(i)){
                 sum=sum+i;
             }
