@@ -1,8 +1,7 @@
 class Solution {
     public boolean sumOfNumberAndReverse(int num) {
         for(int i=num/2;i<=num;i++){
-            int reverse=DigitReverse(i);
-            if(i+reverse==num){
+            if(i+DigitReverse(i)==num){
                 return true;
             }
         }
