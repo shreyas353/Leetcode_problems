@@ -1,6 +1,6 @@
 class Solution {
     public int primePalindrome(int n) {
-        if (n >= 8 && n <= 11) {
+        if(n>=8&&n<=11) {
             return 11;
         }
         int i=1;
