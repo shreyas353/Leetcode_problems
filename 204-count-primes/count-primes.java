@@ -5,19 +5,7 @@ class Solution {
         }
 
         boolean[] prime = new boolean[n];
-        markPrimes(prime, n);
 
-        int count = 0;
-        for (int i = 2; i < n; i++) {
-            if (prime[i]) {
-                count++;
-            }
-        }
-
-        return count;
-    }
-
-    public void markPrimes(boolean[] prime, int n) {
         for (int i = 2; i < n; i++) {
             prime[i] = true;
         }
@@ -29,5 +17,14 @@ class Solution {
                 }
             }
         }
+
+        int count = 0;
+        for (int i = 2; i < n; i++) {
+            if (prime[i]) {
+                count++;
+            }
+        }
+
+        return count;
     }
 }
