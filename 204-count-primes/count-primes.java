@@ -1,33 +1,26 @@
 import java.util.Arrays;
-
 class Solution {
-    public int countPrimes(int n) {
-        if (n <= 2) {
+    public int countPrimes(int n){
+        if (n<=2){
             return 0;
         }
-
-        boolean[] prime = new boolean[n];
-        Arrays.fill(prime, true);
-
+        boolean[] prime=new boolean[n];
+        Arrays.fill(prime,true);
         prime[0] = false;
         prime[1] = false;
-
-        for (int i = 4; i < n; i += 2) {
-            prime[i] = false;
+        for(int i=4;i<n;i+=2){
+            prime[i]=false;
         }
-
-        for (int i = 3; i * i < n; i += 2) {
+        for(int i=3;i*i<n;i+=2){
             if (prime[i]) {
-                for (int j = i * i; j < n; j += 2 * i) {
-                    prime[j] = false;
+                for(int j=i*i;j<n;j+=2*i){
+                    prime[j]=false;
                 }
             }
         }
-
-        int count = 1; // Prime number 2
-
-        for (int i = 3; i < n; i += 2) {
-            if (prime[i]) {
+        int count=1;
+        for(int i=3;i<n;i+=2){
+            if(prime[i]){
                 count++;
             }
         }
