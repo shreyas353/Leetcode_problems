@@ -11,10 +11,10 @@ class Solution
                 {
                     result[0]=i;
                     result[1]=j;
-                    return result;
+                    break;
                 }
             }
         }
-        throw new IllegalArgumentException("No match");
+        return result;
     }
 }
