@@ -6,8 +6,7 @@ class Solution {
         for(int i=1;i<nums.length;i++){
             max_ending=Math.max(max_ending+nums[i],nums[i]);
             min_ending=Math.min(min_ending+nums[i],nums[i]);
-            ans = Math.max(ans,Math.abs(max_ending));
-            ans = Math.max(ans,Math.abs(min_ending));
+            ans=Math.max(ans,Math.max(Math.abs(max_ending),Math.abs(min_ending)));
         }
         return ans;
     }
