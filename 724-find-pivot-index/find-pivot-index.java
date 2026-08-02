@@ -5,11 +5,12 @@ class Solution {
         for(int i=1;i<=nums.length;i++) {
             prefix[i]=prefix[i-1]+nums[i-1];
         }
-        for(int i=nums.length-1;i>=0;i--) {
-            suffix[i]=suffix[i+1]+nums[i];
+        suffix[nums.length-1]=0;
+        for(int i=nums.length-2;i>=0;i--) {
+            suffix[i]=suffix[i+1]+nums[i+1];
         }
         for(int i=0;i<nums.length;i++) {
-            if(prefix[i]==suffix[i+1]){
+            if(prefix[i]==suffix[i]){
                 return i;
             }
         }
