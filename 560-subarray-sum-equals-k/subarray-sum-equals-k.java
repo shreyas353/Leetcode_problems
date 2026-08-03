@@ -1,15 +1,17 @@
+import java.util.HashMap;
 class Solution {
     public int subarraySum(int[] nums, int k) {
-        int count=0;
+        int sum=0;
+        int res=0;
+        HashMap <Integer,Integer> f=new HashMap<>();
+        f.put(0,1);
         for(int i=0;i<nums.length;i++){
-            int sum=0;
-            for(int j=i;j<nums.length;j++){
-                sum=sum+nums[j];
-                if(sum==k){
-                    count++; 
-                }
-            }
+            sum=sum+nums[i];
+            int ques=sum-k;
+            int freq=f.getOrDefault(ques,0);
+            res=res+freq;
+            f.put(sum,f.getOrDefault(sum,0)+1);
         }
-        return count;
+        return res;
     }
 }
