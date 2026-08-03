@@ -5,12 +5,15 @@ class Solution {
         for(int i=0;i<nums.length;i++){
             sum=sum+nums[i];
         }
-        for(int i=0;i<nums.length;i++){
+        if(sum-nums[0]==0){
+            return 0;
+        }
+        for(int i=1;i<nums.length;i++){
+            left=left+nums[i-1];
             int right=sum-nums[i]-left;
             if(left==right){
                 return i;
             }
-            left=left+nums[i];
         }
         return -1;
     }
