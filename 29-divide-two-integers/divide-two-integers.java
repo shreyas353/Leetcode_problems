@@ -1,8 +1,5 @@
-import java.util.Scanner;
-class Solution 
-{
-    public int divide(int dividend, int divisor) 
-    {
+class Solution {
+    public int divide(int dividend, int divisor) {
         if (divisor == 0) 
         {
             return 0;
@@ -27,16 +24,5 @@ class Solution
             quotient += multiple;
         }
         return isNegative ? -quotient : quotient;
-    }
-    public static void main(String[] args) 
-    {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter dividend: ");
-        int dividend = sc.nextInt();
-        System.out.print("Enter divisor: ");
-        int divisor = sc.nextInt();
-        Solution solution = new Solution();
-        int result = solution.divide(dividend, divisor);
-        System.out.println("Quotient: " + result);
     }
 }
