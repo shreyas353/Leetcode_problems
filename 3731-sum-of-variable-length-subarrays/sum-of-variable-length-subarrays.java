@@ -7,8 +7,7 @@ class Solution {
             prefix[i]=prefix[i-1]+nums[i-1];
         }
         for(int i=0;i<nums.length;i++){
-            int start=Math.max(0,i-nums[i]);
-            ans=ans+prefix[i+1]-prefix[start];
+            ans=ans+prefix[i+1]-prefix[Math.max(0,i-nums[i])];
         }
         return ans;
     }
