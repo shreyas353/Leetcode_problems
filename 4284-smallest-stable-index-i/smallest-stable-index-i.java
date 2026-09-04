@@ -7,7 +7,8 @@ class Solution {
             for(int j=i;j<nums.length;j++){
                 right_min=Math.min(right_min,nums[j]);
             }
-            if(left_max-right_min<=k){
+            int score=left_max-right_min;
+            if(score<=k){
                 return i;
             }
         }
