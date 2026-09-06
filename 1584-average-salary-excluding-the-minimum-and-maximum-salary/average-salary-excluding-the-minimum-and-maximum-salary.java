@@ -13,6 +13,7 @@ class Solution {
             sum=sum+salary[i];
         }
         sum=sum-max-min;
-        return (double)sum/(salary.length-2);
+        double average=(double)sum/(salary.length-2);
+        return average;
     }
 }
