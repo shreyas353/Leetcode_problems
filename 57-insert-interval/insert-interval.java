@@ -17,7 +17,6 @@ class Solution {
     }
     public int[][] merge(int[][] intervals){
         List<int[]> res=new ArrayList<>();
-        Arrays.sort(intervals,(x,y) -> x[0]-y[0]);
         int start1=intervals[0][0];
         int end1=intervals[0][1];
         for(int i=1;i<intervals.length;i++){
