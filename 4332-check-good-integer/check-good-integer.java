@@ -8,9 +8,6 @@ class Solution {
             square_sum=square_sum+digits*digits;
             n=n/10;
         }
-        if(square_sum-digit_sum>=50){
-            return true;
-        }
-        return false;
+        return square_sum-digit_sum>=50;
     }
 }
