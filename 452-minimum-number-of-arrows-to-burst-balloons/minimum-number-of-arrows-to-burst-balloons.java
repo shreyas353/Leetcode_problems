@@ -1,0 +1,26 @@
+class Solution {
+    public int findMinArrowShots(int[][] points) {
+        int[][] merged=merge(points);
+        return merged.length;
+    }
+    public int[][] merge(int[][] intervals) {
+        List<int[]> res=new ArrayList<>();
+        Arrays.sort(intervals,(x,y) -> Integer.compare(x[1],y[1]));
+        int start1=intervals[0][0];
+        int end1=intervals[0][1];
+        for(int i=1;i<intervals.length;i++){
+            int start2=intervals[i][0];
+            int end2=intervals[i][1];
+            if(start2<=end1){
+                start1=Math.max(start1,start2);
+                end1=Math.min(end1,end2);
+                continue;
+            }
+            res.add(new int[]{start1,end1});
+            start1=start2;
+            end1=end2;
+        }
+        res.add(new int[]{start1,end1});
+        return res.toArray(new int[res.size()][]);
+    }
+}
