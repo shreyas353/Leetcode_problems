@@ -1,0 +1,24 @@
+import java.util.Stack;
+class Solution {
+    public String removeDuplicates(String s) {
+        Stack<Character> st=new Stack<>();
+        for(int i=0;i<s.length();i++){
+            if(st.empty()){
+                st.push(s.charAt(i));
+                continue;
+            }
+            if(st.peek()==s.charAt(i)){
+                st.pop();
+            }
+            else{
+                st.push(s.charAt(i));
+            }
+        }
+        StringBuilder res=new StringBuilder();
+        while(!st.empty()){
+            res.append(st.peek());
+            st.pop();
+        }
+        return res.reverse().toString();
+    }
+}
