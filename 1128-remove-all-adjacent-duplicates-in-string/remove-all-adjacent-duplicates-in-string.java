@@ -16,8 +16,8 @@ class Solution {
         }
         StringBuilder res=new StringBuilder();
         while(!st.empty()){
-            res.append(st.peek());
-            st.pop();
+            res.append(st.pop());
+            //st.pop();
         }
         return res.reverse().toString();
     }
