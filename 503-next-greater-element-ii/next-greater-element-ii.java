@@ -3,8 +3,8 @@ class Solution {
     public int[] nextGreaterElements(int[] nums) {
         int[] res=new int[nums.length];
         Stack<Integer> st=new Stack<>();
-        st.push(nums[nums.length-1]);
-        res[nums.length-1]=-1;
+        // st.push(nums[nums.length-1]);
+        // res[nums.length-1]=-1;
         for(int i=2*nums.length-1;i>=0;i--){
             int index=i%nums.length;
             while(!st.empty() && st.peek()<=nums[index]){
