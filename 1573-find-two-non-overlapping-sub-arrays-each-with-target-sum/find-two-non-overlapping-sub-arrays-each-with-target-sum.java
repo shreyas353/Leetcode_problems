@@ -8,7 +8,7 @@ class Solution {
         for(int right=0;right<arr.length;right++){
             sum+=arr[right];
             while(sum>target){
-                sum-=arr[left];
+                sum=sum-arr[left];
                 left++;
             }
             if(right>0){
