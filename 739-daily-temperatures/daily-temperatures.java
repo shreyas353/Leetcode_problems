@@ -4,7 +4,7 @@ class Solution {
         Stack<Integer> st=new Stack<>();
         st.push(temperatures.length-1);
         res[temperatures.length-1]=0;
-        for(int i=temperatures.length-2;i>=0;i--){
+        for(int i=temperatures.length-1;i>=0;i--){
             while(!st.empty() && temperatures[st.peek()]<=temperatures[i]){
                 st.pop();
             }
