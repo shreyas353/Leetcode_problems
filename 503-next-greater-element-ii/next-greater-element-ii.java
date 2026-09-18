@@ -3,20 +3,20 @@ class Solution {
     public int[] nextGreaterElements(int[] nums) {
         int[] res=new int[nums.length];
         Stack<Integer> st=new Stack<>();
-        st.push(nums[nums.length-1]);
-        res[nums.length-1]=-1;
-        for(int i=2*nums.length-1;i>=0;i--){
-            int index=i%nums.length;
-            while(!st.empty() && st.peek()<=nums[index]){
+         for(int i=nums.length-2;i>=0;i--) {
+            st.push(nums[i]);
+         }
+        for(int i=nums.length-1;i>=0;i--){
+            while(!st.empty() && st.peek()<=nums[i]){
                 st.pop();
             }
             if(st.empty()){
-                res[index]=-1;
+                res[i]=-1;
             }
             else{
-                res[index]=st.peek();
+                res[i]=st.peek();
             }
-            st.push(nums[index]);
+            st.push(nums[i]);
         }
         return res;
     }
