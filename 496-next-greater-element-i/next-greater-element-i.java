@@ -6,16 +6,14 @@ class Solution {
             while(!st.empty() && st.peek()<=nums2[i]){
                 st.pop();
             }
-            int greater;
-            if(st.empty()){
-                greater=-1;
-            }
-            else{
-                greater=st.peek();
-            }
-            for(int j=0;j<nums1.length;j++) {
-                if(nums1[j]==nums2[i]) {
-                    res[j]=greater;
+            for(int j=0;j<nums1.length;j++){
+                if(nums1[j]==nums2[i]){
+                    if(st.empty()){
+                        res[j]=-1;
+                    }
+                    else{
+                        res[j]=st.peek();
+                    }
                 }
             }
             st.push(nums2[i]);
