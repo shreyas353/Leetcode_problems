@@ -1,9 +1,9 @@
 class Solution {
     public int[] constructTransformedArray(int[] nums) {
+        int n=nums.length;
         int res[]=new int[nums.length];
         for(int i=0;i<nums.length;i++){
-            int index=Math.floorMod(i+nums[i],nums.length);
-            res[i]=nums[index];
+            res[i]=nums[((i+nums[i])%n+n)%n];
         }
         return res;
     }
