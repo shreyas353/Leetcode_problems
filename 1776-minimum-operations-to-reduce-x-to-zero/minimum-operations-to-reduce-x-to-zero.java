@@ -5,6 +5,9 @@ class Solution {
             total=total+nums[i];
         }
         int target=total-x;
+        if(target<0){
+            return -1;
+        }
         if(target==0){
             return nums.length;
         }
