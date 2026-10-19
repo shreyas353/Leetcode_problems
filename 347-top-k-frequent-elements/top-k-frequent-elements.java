@@ -29,10 +29,8 @@ class Solution {
             pq.add(curr);
         }
         int[] res=new int[k];
-        int i=0;
-        while(!pq.isEmpty()){
+        for(int i=0;i<k;i++){
             res[i]=pq.poll().second;
-            i++;
         }
         return res;
     }
