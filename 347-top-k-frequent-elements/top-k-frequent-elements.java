@@ -13,14 +13,7 @@ class Solution {
         for(int i=0;i<nums.length;i++){
             map.put(nums[i],map.getOrDefault(nums[i],0)+1);
         }
-        PriorityQueue<Pair> pq=new PriorityQueue<>(
-            (a,b)-> {
-                if(a.first!=b.first){
-                    return a.first-b.first;
-                }
-                return a.second-b.second;
-            }
-        );
+        PriorityQueue<Pair> pq=new PriorityQueue<>((a,b)-> a.first-b.first);
         for (int i:map.keySet()) {
             int first=i;
             int second=map.get(i);
