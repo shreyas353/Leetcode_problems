@@ -39,7 +39,7 @@ class Solution {
             pq.add(curr);
         }
         ArrayList<String> res=new ArrayList<>();
-        for(int i = 0;i<k;i++) {
+        while (!pq.isEmpty()) {
             res.add(pq.poll().second);
         }
         Collections.reverse(res);
