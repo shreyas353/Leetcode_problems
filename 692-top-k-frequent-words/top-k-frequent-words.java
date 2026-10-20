@@ -32,14 +32,14 @@ class Solution {
             if(curr.first<pq.peek().first){
                 continue;
             }
-            if(curr.first==pq.peek().first&&curr.second.compareTo(pq.peek().second)>0){
+            if(curr.first==pq.peek().first && curr.second.compareTo(pq.peek().second)>0){
                 continue;
             }
             pq.poll();
             pq.add(curr);
         }
         ArrayList<String> res=new ArrayList<>();
-        while (!pq.isEmpty()) {
+        while(!pq.isEmpty()) {
             res.add(pq.poll().second);
         }
         Collections.reverse(res);
