@@ -1,4 +1,3 @@
-import java.util.*;
 class Pair{
     int first;
     String second;
@@ -32,7 +31,7 @@ class Solution {
             if(curr.first<pq.peek().first){
                 continue;
             }
-            if(curr.first==pq.peek().first && curr.second.compareTo(pq.peek().second)>0){
+            if(curr.first==pq.peek().first&&curr.second.compareTo(pq.peek().second)>0){
                 continue;
             }
             pq.poll();
