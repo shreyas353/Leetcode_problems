@@ -1,8 +1,5 @@
 class Solution {
     public int distinctPrimeFactors(int[] nums) {
-        return countFactors(nums);
-    }
-    public int countFactors(int[] nums){
         int count=0;
         for(int i=2;i<=1000;i++){
             if(isPrime(i) && IsPrimeFactor(nums,i)){
