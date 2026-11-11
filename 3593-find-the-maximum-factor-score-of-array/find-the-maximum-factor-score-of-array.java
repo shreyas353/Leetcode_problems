@@ -8,8 +8,7 @@ class Solution {
         return max;
     }
     public long calculate(int[] nums,int skip){
-        long g=0;
-        long l=1;
+        long g=0,l=1;
         for(int i=0;i<nums.length;i++){
             if(i==skip){
                 continue;
