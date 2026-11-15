@@ -4,7 +4,6 @@ class Solution {
         int odd=0;
         int count=0;
         int sum=0;
-        int mod=1000000007;
         for(int i=0;i<arr.length;i++){
             sum=sum+arr[i];
             if(sum%2!=0){
@@ -15,7 +14,7 @@ class Solution {
                 count=count+odd;
                 even++;
             }
-            count=count%mod;
+            count=count%1000000007;
         }
         return (int)count;
     }
