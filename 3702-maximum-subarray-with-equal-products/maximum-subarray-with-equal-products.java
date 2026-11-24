@@ -3,8 +3,7 @@ class Solution {
         int ans=0;
         for(int i=0;i<nums.length;i++){
             long product=1;
-            long gcd=0;
-            long lcm=1;
+            long gcd=0,lcm=1;
             for(int j=i;j<nums.length;j++){
                 product=product*nums[j];
                 gcd=gcd(gcd,nums[j]);
